@@ -1,0 +1,63 @@
+$base-color: #c6538c;
+$card-background-color: #f2f8f9;
+$card-background-color-before: #37c7d1;
+.main-card {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  .example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    display: block;
+    position: relative;
+    max-width: 262px;
+    background-color: $card-background-color;
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -16px;
+      right: -16px;
+      background: $card-background-color-before;
+      height: 32px;
+      width: 32px;
+      border-radius: 32px;
+      transform: scale(2);
+      transform-origin: 80% 29%;
+      transition: transform 0.25s ease-out;
+    }
+
+    &:hover:before {
+      transform: scale(21);
+    }
+    &:hover {
+      transition: all 0.3s ease-out;
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .title-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100px;
+      margin-left: auto;
+      margin-right: auto;
+      .text {
+        text-align: center;
+      }
+      img {
+        border-radius: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
